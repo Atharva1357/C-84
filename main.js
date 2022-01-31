@@ -26,14 +26,33 @@ function my_keydown(e) {
 	keyPressed = e.keyCode;
 	console.log(keyPressed);
 
-	if ((keyPressed >= 97 && keyPressed <= 122) || (keyPressed >= 65 && keyPressed <= 90)) {
+	if (keyPressed >= 65 && keyPressed <= 90) {
 		aplhabetkey();
 		document.getElementById("d1").innerHTML = "You pressed the Alphabet Key";
 		console.log("alphabet key");
-	} else {
-		otherkey();
-		document.getElementById("d1").innerHTML = "You pressed symbol or other key";
 	}
+	if (keyPressed >= 97 && keyPressed <= 122) {
+		aplhabetkey();
+		document.getElementById("d1").innerHTML = "You pressed the Alphabet Key";
+		console.log("alphabet key");
+	}
+	if (keyPressed >= 48 && keyPressed <= 57) {
+		numberkey();
+		document.getElementById("d1").innerHTML = "You pressed the Number Key";
+		console.log("numkey key");
+	}
+	if (keyPressed >= 37 && keyPressed <= 40) {
+		arrowkey();
+		document.getElementById("d1").innerHTML = "You pressed the Arrow Key";
+		console.log("arrow key");
+	}
+	if ((keyPressed == 17) || (keyPressed == 18) || (keyPressed == 27)) {
+		specialkey();
+		document.getElementById("d1").innerHTML = "You pressed the Special Key";
+		console.log("Special key");
+	}
+	
+	
 }
 
 function aplhabetkey() {
